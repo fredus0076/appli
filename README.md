@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+build pour un micro service
+ng build --output-hashing=none
+
+lancer un server du dist créer
+npm i lite-server --save-dev
+npx lite-server --baseDir="dist/appli"
+
+dans l'application de reception dans son index.html ajouter ceci
+<script src="http://localhost:3000/runtime.js"></script>
+  <script src="http://localhost:3000/polyfills.js"></script>
+  <script src="http://localhost:3000/main.js"></script>
+
+Ajouter dans le appModule du recepteur 
+schemas: [[CUSTOM_ELEMENTS_SCHEMA]
+cela permet d'appeler les composant importer partout dans l'application
+
